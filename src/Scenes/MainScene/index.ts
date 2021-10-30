@@ -10,25 +10,21 @@ export default class extends Phaser.Scene {
         
         console.log('preload');
         
-        this.load.tilemapTiledJSON('tiled_map', 'assets/Levels/level_1.json')
+        this.load.tilemapTiledJSON('map', 'assets/Levels/level_1.json')
         this.load.spritesheet('tiles', ('assets/tilesheet.png'), 
             {
                 frameWidth: 128,
                 startFrame: 0
             }
         )
+        // this.load.image('tiles','assets/tilesheet.png');
     }
     create() {
-        console.log('creat');
-        // this.add.sprite(400,300,'tiles',1)
-        const map = this.make.tilemap({ key: 'tiled_map' });
-        const tiles = map.addTilesetImage('tiles');
-        console.log(
-            tiles
-        );
+        const map = this.make.tilemap({ key: 'map' });
+        const tiles = map.addTilesetImage('sokobon','tiles');
+        console.log(tiles);
         
         const layer = map.createLayer('my_layer', tiles, 0, 0);
-        
 
     }
 }

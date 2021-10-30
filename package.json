@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "dev": "parcel -p 3000 ./src/index.html",
-        "build": "parcel ./src/index.html"
+        "build": "parcel ./src/index.html",
+        "cp-assets-linux": "cp -r src/assets/* dist/assets"
     },
     "author": "",
     "license": "ISC",
@@ -14,16 +15,6 @@
     },
     "devDependencies": {
         "parcel": "^2.0.0",
-        "eslint": "^6.8.0",
-        "minimist": ">=1.2.2",
-        "parcel-plugin-clean-easy": "^1.0.2",
-        "parcel-plugin-static-files-copy": "^2.4.3"
-    },
-    "parcelCleanPaths": [
-        "dist"
-    ],
-    "staticFiles": {
-        "staticPath": "public",
-        "watcherGlob": "**"
+        "typescript": "^4.4.4"
     }
 }
