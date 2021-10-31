@@ -2,6 +2,7 @@ import * as Phaser from "phaser";
 // import {} from '../../assets/Levels/level_1.json'
 
 export default class extends Phaser.Scene {
+    level:[[]]= [[]];
     // constructor() {
     //     super("main-screen")        
     // }
@@ -17,13 +18,15 @@ export default class extends Phaser.Scene {
                 startFrame: 0
             }
         )
-        // this.load.image('tiles','assets/tilesheet.png');
+        this.level =[[
+
+        ]]
+
     }
     create() {
-        const map = this.make.tilemap({ key: 'map' });
-        const tiles = map.addTilesetImage('sokobon','tiles');
-        console.log(tiles);
-        
+        // const map = this.make.tilemap({ key: 'map' });
+        // const tiles = map.addTilesetImage('sokobon','tiles');        
+        const map = this.make.tilemap({data:this.level,tileWidth:})
         const layer = map.createLayer('my_layer', tiles, 0, 0);
 
     }
